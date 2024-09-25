@@ -1,0 +1,5 @@
+Run producer.py
+---------------
+
+poetry run python .\producer\producer.py
+

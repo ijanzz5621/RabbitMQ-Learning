@@ -1,0 +1,16 @@
+
+https://www.youtube.com/results?search_query=RabbitMQ+MassTransit+tutorial
+
+RabbitMQ - Tutorial 1 - Why RabbitMQ?
+https://www.youtube.com/watch?v=iQ4kENLfaNI&list=PLalrWAGybpB-UHbRDhFsBgXJM1g6T4IvO&index=2
+
+Tutorial Bookmark:
+------------------
+
+Stop at:
+
+RabbitMQ- Tutorial 8a - Competing Consumers Python Implementation
+https://www.youtube.com/watch?v=jXBd0jP6EoE&list=PLalrWAGybpB-UHbRDhFsBgXJM1g6T4IvO&index=9
+Time at: 2:07
+
+

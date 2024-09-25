@@ -1,0 +1,5 @@
+How to add RabbitMQ client to project:
+--------------------------------------
+
+dotnet add package RabbitMQ.Client
+
