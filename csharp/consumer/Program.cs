@@ -19,14 +19,24 @@ channel.QueueDeclare(
 
 var consumer = new EventingBasicConsumer(channel);
 
+var random = new Random();
+
 consumer.Received += (model, ea) => {
+
+    var processingTime = random.Next(1, 6);
+
     var body = ea.Body.ToArray();
+    
     var message = Encoding.UTF8.GetString(body);
 
     Console.WriteLine($"Message Received: {message}");
 };
 
-channel.BasicConsume(queue: "letterbox", autoAck: true, consumer: consumer);
+// with auto ack
+// channel.BasicConsume(queue: "letterbox", autoAck: true, consumer: consumer);
+// without auto ack
+channel.BasicConsume(queue: "letterbox", consumer: consumer);
+
 
 Console.ReadKey();
 
