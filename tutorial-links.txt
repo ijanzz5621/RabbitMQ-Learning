@@ -9,8 +9,8 @@ Tutorial Bookmark:
 
 Stop at:
 
-RabbitMQ- Tutorial 9 - Pub/Sub
-https://www.youtube.com/watch?v=rgTW-cserPo&list=PLalrWAGybpB-UHbRDhFsBgXJM1g6T4IvO&index=11
+RabbitMQ- Tutorial 10a - Pub/Sub Python Implementation
+https://www.youtube.com/watch?v=Hy0cjAcxn_0&list=PLalrWAGybpB-UHbRDhFsBgXJM1g6T4IvO&index=12
 Time at: 0:00
 
 
