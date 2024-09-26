@@ -16,10 +16,22 @@ channel.QueueDeclare(
     autoDelete: false,
     arguments: null);
 
-var message  = "This is my second message from CSharp Producer";
-var encodedMessage = Encoding.UTF8.GetBytes(message);
+var random = new Random();
+int messageId = 1;
 
-// "" exchange = default exchange
-channel.BasicPublish("", "letterbox", null, encodedMessage);
+while(true) {
 
-Console.WriteLine($"Published message: {message}");
+    var publishingTime = random.Next(1, 4);
+
+    var message  = $"Message {messageId}: Sent to queue";
+    var encodedMessage = Encoding.UTF8.GetBytes(message);
+
+    // "" exchange = default exchange
+    channel.BasicPublish("", "letterbox", null, encodedMessage);
+
+    Console.WriteLine($"Published message: {message}");
+    
+    Task.Delay(TimeSpan.FromSeconds(publishingTime)).Wait();
+    messageId++;
+}
+

@@ -9,8 +9,8 @@ Tutorial Bookmark:
 
 Stop at:
 
-RabbitMQ- Tutorial 8b - Competing Consumers C# Implementation
-https://www.youtube.com/watch?v=LBOfQiaGyxQ&list=PLalrWAGybpB-UHbRDhFsBgXJM1g6T4IvO&index=10
+RabbitMQ- Tutorial 9 - Pub/Sub
+https://www.youtube.com/watch?v=rgTW-cserPo&list=PLalrWAGybpB-UHbRDhFsBgXJM1g6T4IvO&index=11
 Time at: 0:00
 
 

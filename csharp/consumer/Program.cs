@@ -7,7 +7,6 @@ var factory = new ConnectionFactory { HostName = "localhost", Port = 5672 };
 
 // No need to close the connection for using
 using var connection = factory.CreateConnection();
-
 using var channel = connection.CreateModel();
 
 channel.QueueDeclare(
@@ -16,6 +15,9 @@ channel.QueueDeclare(
     exclusive: false, 
     autoDelete: false,
     arguments: null);
+
+// Set the QOS
+channel.BasicQos(prefetchSize: 0, prefetchCount: 1, global: false);
 
 var consumer = new EventingBasicConsumer(channel);
 
@@ -29,7 +31,12 @@ consumer.Received += (model, ea) => {
     
     var message = Encoding.UTF8.GetString(body);
 
-    Console.WriteLine($"Message Received: {message}");
+    Console.WriteLine($"Received: '{message}' will take {processingTime} seconds to process");
+    Task.Delay(TimeSpan.FromSeconds(processingTime)).Wait();
+
+    // Ack after processing complete.
+    // If the processing took longer time to complete, it will send to other consumers to process
+    channel.BasicAck(deliveryTag: ea.DeliveryTag, multiple: false);
 };
 
 // with auto ack
