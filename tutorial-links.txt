@@ -9,8 +9,8 @@ Tutorial Bookmark:
 
 Stop at:
 
-RabbitMQ- Tutorial 10b - Pub/Sub C# Implementation
-https://www.youtube.com/watch?v=PrV6sVoEvyY&list=PLalrWAGybpB-UHbRDhFsBgXJM1g6T4IvO&index=13
+RabbitMQ- Tutorial 11- Routing
+https://www.youtube.com/watch?v=56IyW2OWllA&list=PLalrWAGybpB-UHbRDhFsBgXJM1g6T4IvO&index=14
 Time at: 0:00
 
 
