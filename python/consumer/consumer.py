@@ -4,14 +4,15 @@ import random
 
 import pika.channel as pikaChannel
 import pika.spec as pikaSpec
+from pika.credentials import PlainCredentials
 
 # create connection
-connection_parameters = pika.ConnectionParameters('localhost', 5672)
+connection_parameters = pika.ConnectionParameters('192.168.0.101', 5672, "general_vhost", credentials=PlainCredentials("general", "p@ssw0rd!"))
 connection = pika.BlockingConnection(connection_parameters)
 
 # create channel
 channel = connection.channel()
-channel.queue_declare(queue='letterbox')
+channel.queue_declare(queue='general')
 
 # quality of service
 # process a single message at a time
@@ -36,7 +37,7 @@ def on_message_received(channel: pikaChannel.Channel,
 # channel.basic_consume(queue='letterbox', 
 #                       auto_ack=True, # to acknowledge immedieatly to the broker. The next item will be queue evene the processing still in progress 
 #                       on_message_callback=on_message_received)
-channel.basic_consume(queue='letterbox', 
+channel.basic_consume(queue='general', 
                       on_message_callback=on_message_received)
 
 print("Start Consuming...")
