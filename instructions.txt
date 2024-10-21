@@ -1,0 +1,23 @@
+Install RabbitMQ Server:
+========================
+
+	1. Install Erlang - https://erlang.org/download/otp_win64_27.1.exe
+	2. Set ERLANG_HOME in ENV VARIABLE and point to Erlang installed folder - C:\Program Files\Erlang OTP
+	3. Download RabbitMQ (Latest Windows Zip) from https://github.com/rabbitmq/rabbitmq-server/releases
+	4. Extract the zip and place the extracted content somewhere - C:\Services\rabbitmq_server-4.0.2
+	5. Enable RabbitMQ Management plugin
+		a. Go to C:\Services\rabbitmq_server-4.0.2\sbin folder
+		b. Run below command in commandd prompt:
+			i. Rabbitmq-plugins enable rabbitmq_management
+			ii. rabbitmq-plugins enable rabbitmq_prometheus
+			iii. rabbitmq-plugins enable rabbitmq_web_dispatch
+			iv. rabbitmq-plugins enable rabbitmq_management_agent
+
+    Running the RabbitMQ Server
+
+	1. Run the RabbitMQ server
+		a. Rabbitmq-server.bat
+	2. Navigate to default path and port: http: http://localhost:15672/
+	3. Login using below account:
+		a. Username: guest
+		b. Password: guest
